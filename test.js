@@ -28,12 +28,15 @@ const PORT = process.env.PORT || 3000;
     await apiController.submitPointVehicl_6(accessToken);
 		await apiController.submitPointVehicl_7(accessToken);
 		await apiController.submitPointVehicl_8(accessToken);
+    await new Promise (resolve => setTimeout(resolve, 3000));
 		await apiController.submitPointVehicl_9(accessToken);
+    await new Promise (resolve => setTimeout(resolve, 3000));
 		await apiController.submitPointVehicl_10(accessToken);
+    await new Promise (resolve => setTimeout(resolve, 3000));
     await apiController.submitLocation_WithThing11(accessToken);
 		await apiController.submitLocation_WithThing12(accessToken);
+    await new Promise (resolve => setTimeout(resolve, 3000));
     await apiController.updateAsset_Vehicl_10_defaults(accessToken);
-
 
     app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);

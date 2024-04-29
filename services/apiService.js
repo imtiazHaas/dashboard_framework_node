@@ -276,6 +276,26 @@ async function submitLocation_WithThing12() {
     throw error;
   }
 }
+async function updateAsset_Vehicl_10_defaults() {
+  try {
+    const accessToken = await authenticate();
+    const response = await axios.put(
+      "https://api.haasalertdev.com/organizations/1377a295-7d70-4e41-a086-87c39f243fd7/things/test_thing_10",
+      postDataConfig.postData13,
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          "Content-Type": "application/json",
+          Accept: "application/vnd.haasalert.com; version=2",
+        },
+      }
+    );
+    console.log("Update asset vehicle 10 defaults:", response.data);
+  } catch (error) {
+    console.error("API Error:", error.message);
+    throw error;
+  }
+}
 
 /**
  * @description Exports the accessProtectedEndpoint and submitPointVehicl functions for use in other modules.
@@ -293,4 +313,5 @@ module.exports = {
   submitPointVehicl_10,
   submitLocation_WithThing11,
   submitLocation_WithThing12,
+  updateAsset_Vehicl_10_defaults,
 };
